@@ -1,0 +1,45 @@
+/* Define units of measurement for the boxes */
+.container {
+  font-size: 16px;
+}
+.box1 {
+  margin: auto;
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+}
+.box2 {
+  margin: auto;
+  margin-top: 20px;
+  width: 2em;
+  height: 2em;
+}
+.box3 {
+  margin: auto;
+  margin-top: 20px;
+  width: 10vw;
+  height: 10vh;
+}
+
+/* Use chaining to apply common styles to all boxes */
+.container .box1, .container .box2, .container .box3 {
+  padding: 1rem;
+  background-color: red;
+  color: white;
+  transition: transform 1s; /* Define a transition for the transform property */
+}
+/* Use combinators to target specific boxes */
+.container > .box1 {
+  background-color: blue;
+}
+.container + .box2 {
+  background-color: green;
+}
+.container ~ .box3 {
+  background-color: yellow;
+}
+
+/* Add hover styles with transform */
+.container .box1:hover, .container .box2:hover, .container .box3:hover {
+  transform: rotate(180deg) scale(1.5); /* Add a transformation to the hover state */
+}
